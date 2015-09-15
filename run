@@ -1,0 +1,3 @@
+#!/bin/bash
+#docker run -d -v /var/jenkins_home --name jenkins_data  angelcrunch/data "this is data for jenkins"
+docker run -d -u 1000 --volumes-from ac_home -v /data/docker-etc/jenkinsci:/var/jenkins_home --link ac_online:ac -p 8081:8080 -p 50001:50000 --name jenkinsci2 jenkinsci/jenkinsci
