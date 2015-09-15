@@ -1,5 +1,7 @@
 FROM java:8-jdk
 
+COPY sources.list.trusty /etc/apt/sources.list
+
 RUN apt-get update && apt-get install -y wget git curl zip wget git curl zip python-dev python-pip && rm -rf /var/lib/apt/lists/*
 RUN pip install hg-git
 
