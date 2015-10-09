@@ -1,5 +1,6 @@
 FROM java:8-jdk
 
+COPY sources.list /etc/apt/sources.list
 RUN apt-get update && apt-get install -y wget git curl zip && rm -rf /var/lib/apt/lists/*
 
 ENV JENKINS_HOME /var/jenkins_home
